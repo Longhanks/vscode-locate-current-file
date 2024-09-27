@@ -1,0 +1,67 @@
+{
+  "name": "vscode-locate-current-file",
+  "displayName": "vscode-locate-current-file",
+  "description": "Locate the currently active file in the explorer tree.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other",
+    "Visualization"
+  ],
+  "bugs": {
+    "url": "https://github.com/Longhanks/vscode-locate-current-file/issues",
+    "email": "hey@gourav.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Longhanks/vscode-locate-current-file.git"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Andreas Schulz",
+    "email": "andi.schulz@me.com"
+  },
+  "publisher": "Longhanks",
+  "homepage": "https://github.com/Longhanks/vscode-locate-current-file",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-locate-current-file.locateCurrentFile",
+        "title": "Locate Current File in Explorer View",
+        "icon": "$(target)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "vscode-locate-current-file.locateCurrentFile",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
