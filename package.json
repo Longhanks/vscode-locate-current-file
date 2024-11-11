@@ -2,7 +2,7 @@
   "name": "vscode-locate-current-file",
   "displayName": "vscode-locate-current-file",
   "description": "Locate the currently active file in the explorer tree.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.93.0"
   },
@@ -33,13 +33,22 @@
       {
         "command": "vscode-locate-current-file.locateCurrentFile",
         "title": "Locate Current File in Explorer View",
-        "icon": "$(target)"
+        "icon": "$(pinned)"
+      },
+      {
+        "command": "vscode-locate-current-file.toggleExplorerAutoReveal",
+        "title": "Toggle Explorer View Auto Reveal",
+        "icon": "$(pinned-dirty)"
       }
     ],
     "menus": {
       "editor/title": [
         {
           "command": "vscode-locate-current-file.locateCurrentFile",
+          "group": "navigation"
+        },
+        {
+          "command": "vscode-locate-current-file.toggleExplorerAutoReveal",
           "group": "navigation"
         }
       ]
